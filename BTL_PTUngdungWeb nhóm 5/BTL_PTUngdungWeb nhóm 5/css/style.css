@@ -1,171 +1,488 @@
+/* ======================== */
+/* PHONG CÁCH CHUNG */
+/* ======================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1a1a1a; 
-    color: #f4f4f4;
+    background: linear-gradient(180deg, #111 0%, #1b1b1b 100%);
+    color: #f5f5f5;
+    scroll-behavior: smooth;
 }
 a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.3s ease;
 }
 
+/* ======================== */
+/* HEADER */
+/* ======================== */
 .main-header {
-    background-color: #0d0d0d;
-    padding: 15px 5%;
+    background-color: rgba(13, 13, 13, 0.98);
+    padding: 18px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    position: sticky; /* Menu dính */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+    position: sticky;
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(8px);
 }
 .logo {
-    font-size: 1.8em;
+    font-size: 1.9em;
     font-weight: 900;
-    color: #e53935; /* Màu đỏ nổi bật */
+    letter-spacing: 1px;
+    color: #ff2e2e;
+    text-shadow: 0 0 10px rgba(229, 57, 53, 0.5);
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.05);
 }
 .main-nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    gap: 10px;
 }
 .main-nav li a {
     color: white;
-    padding: 10px 18px;
-    display: block;
-    transition: color 0.3s, background-color 0.3s;
+    padding: 10px 20px;
     font-weight: 500;
-    border-radius: 4px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 .main-nav li a:hover {
-    color: #e53935;
-    background-color: #2b2b2b;
+    background-color: #e53935;
+    color: white;
+    box-shadow: 0 0 10px rgba(229, 57, 53, 0.6);
 }
 .user-actions a {
-    color: white;
+    color: #f5f5f5;
     margin-left: 25px;
-    font-size: 1.2em;
-    transition: color 0.3s;
+    font-size: 1.3em;
 }
 .user-actions a:hover {
     color: #e53935;
 }
 
-/* Hero Banner */
+/* ======================== */
+/* HERO BANNER */
+/* ======================== */
 .hero-banner {
-    /* Thay thế URL ảnh bằng đường dẫn ảnh chất lượng cao của bạn */
-    background: url('images/banner.jpg') no-repeat center center/cover; 
-    height: 70vh;
+    background: url('images/banner.jpg') no-repeat center center/cover;
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
     position: relative;
 }
 .hero-banner::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Tạo lớp phủ tối cho chữ dễ đọc */
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
 }
 .hero-content {
     z-index: 10;
+    color: #fff;
+    animation: fadeInUp 1.5s ease;
 }
 .hero-content h1 {
     font-size: 4em;
+    letter-spacing: 3px;
     margin-bottom: 15px;
-    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 .hero-content p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: 300;
+    color: #ddd;
+}
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Nút bấm (Button) */
+/* ======================== */
+/* BUTTONS */
+/* ======================== */
 .btn-primary {
-    background-color: #e53935;
+    background: linear-gradient(90deg, #e53935, #b71c1c);
     color: white;
     padding: 12px 35px;
-    text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: bold;
+    margin-top: 25px;
     display: inline-block;
-    margin-top: 30px;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: all 0.3s ease;
 }
 .btn-primary:hover {
-    background-color: #c42c2c;
-    transform: translateY(-2px);
+    background: linear-gradient(90deg, #ff5c5c, #e53935);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(229, 57, 53, 0.6);
 }
 .btn-secondary {
-    background-color: #444;
+    background-color: #333;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
-    display: inline-block;
-    transition: background-color 0.3s;
 }
 .btn-secondary:hover {
     background-color: #e53935;
 }
 
-/* Product Showcase */
+/* ======================== */
+/* PRODUCT SHOWCASE */
+/* ======================== */
 .product-showcase {
     padding: 80px 5%;
     text-align: center;
 }
 .product-showcase h2 {
-    font-size: 2.5em;
-    margin-bottom: 50px;
+    font-size: 2.8em;
     color: #e53935;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 .product-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 25px;
 }
 .car-card {
-    background-color: #2b2b2b;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    margin: 20px;
-    width: 300px;
+    background: linear-gradient(145deg, #252525, #1a1a1a);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     overflow: hidden;
-    transition: transform 0.3s ease-in-out;
+    width: 310px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .car-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(229, 57, 53, 0.3);
 }
 .car-card img {
     width: 100%;
-    height: 200px;
+    height: 210px;
     object-fit: cover;
 }
 .card-info {
     padding: 20px;
 }
 .card-info h3 {
-    margin-top: 0;
-    color: white;
+    font-size: 1.3em;
+    color: #fff;
 }
 .card-info .tag {
-    color: #aaa;
+    color: #bbb;
     font-size: 0.9em;
     margin-bottom: 15px;
 }
 
-/* Footer */
+/* ======================== */
+/* CAR DETAIL PAGE */
+/* ======================== */
+.car-detail-section h1 {
+    text-align: center;
+    color: #e53935;
+    font-size: 3.2em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+.car-gallery {
+    text-align: center;
+}
+.car-gallery .main-image {
+    max-height: 480px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+.thumbnail-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+.thumbnail-images img {
+    width: 30%;
+    height: 100px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+.thumbnail-images img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.car-info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin: 50px auto;
+}
+.car-specs, .car-price-action {
+    background: #2b2b2b;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+.car-specs h2, .car-price-action h2 {
+    color: #e53935;
+    margin-bottom: 15px;
+}
+.car-specs li {
+    border-bottom: 1px dashed #444;
+    padding: 8px 0;
+}
+.price-tag {
+    color: #e53935;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+/* ======================== */
+/* FOOTER */
+/* ======================== */
 footer {
     background-color: #0d0d0d;
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
+    padding: 25px 0;
+    font-size: 0.95em;
+    color: #aaa;
     border-top: 1px solid #333;
+    margin-top: 60px;
+}
+footer p {
+    margin: 0;
+}
+
+/* ======================== */
+/* RESPONSIVE DESIGN */
+/* ======================== */
+@media (max-width: 992px) {
+    .car-info-grid {
+        grid-template-columns: 1fr;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .logo {
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .car-card {
+        width: 90%;
+    }
+    .thumbnail-images img {
+        width: 30%;
+    }
+}
+/* ======================== */
+/* LEAFLET MAP STYLE (LIÊN HỆ TRANG) */
+/* ======================== */
+
+#map {
+    height: 480px;
+    width: 100%;
+    margin: 50px auto;
+    border: 2px solid #e53935;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#map:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 25px rgba(229, 57, 53, 0.4);
+}
+
+/* Tùy chỉnh giao diện control của Leaflet để hợp với nền tối */
+.leaflet-container {
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.leaflet-control-zoom a {
+    background: #2b2b2b;
+    color: #fff !important;
+    border: 1px solid #444;
+    transition: all 0.2s ease;
+}
+
+.leaflet-control-zoom a:hover {
+    background: #e53935;
+    color: #fff !important;
+    border-color: #e53935;
+}
+
+/* Popup của Leaflet (phần thông tin showroom) */
+.leaflet-popup-content-wrapper {
+    background: #1f1f1f;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #e53935;
+    box-shadow: 0 4px 15px rgba(229, 57, 53, 0.4);
+}
+
+.leaflet-popup-tip {
+    background: #1f1f1f;
+    border-top: 1px solid #e53935;
+}
+
+/* Đảm bảo control (phóng to, thu nhỏ, logo) hiển thị rõ */
+.leaflet-control-attribution,
+.leaflet-control-scale-line {
+    background: rgba(0, 0, 0, 0.6);
+    color: #aaa;
+    font-size: 0.8em;
+    border-radius: 5px;
+    padding: 2px 6px;
+}
+
+/* ======================== */
+/* LIÊN HỆ TRANG - LUXURY STYLE */
+/* ======================== */
+
+.contact-form-section h2,
+.contact-info h2 {
+    color: #e53935;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: linear-gradient(145deg, #202020, #1a1a1a);
+    border: 1px solid #333;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto 70px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.contact-form select,
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #2b2b2b;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+.contact-form select:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #e53935;
+    outline: none;
+    box-shadow: 0 0 10px rgba(229, 57, 53, 0.3);
+}
+.contact-form button {
+    flex: 1 1 100%;
+    background: linear-gradient(90deg, #e53935, #b71c1c);
+    border: none;
+    padding: 14px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s;
+    margin-top: 10px;
+}
+.contact-form button:hover {
+    background: linear-gradient(90deg, #ff5252, #e53935);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(229, 57, 53, 0.5);
+}
+
+/* CARD THÔNG TIN */
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 60px;
+}
+.info-card {
+    background: linear-gradient(160deg, #232323, #1b1b1b);
+    flex: 1 1 300px;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(229, 57, 53, 0.3);
+}
+.info-card h2 {
+    color: #e53935;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.info-card p {
+    margin: 5px 0;
+    color: #ddd;
+    line-height: 1.5;
+}
+.info-card a {
+    color: #e53935;
+    transition: color 0.3s;
+}
+.info-card a:hover {
+    color: #ff6b6b;
+}
+
+/* MAP STYLE */
+#map {
+    height: 450px;
+    width: 100%;
+    margin: 40px auto 60px;
+    border: 2px solid #e53935;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#map:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 25px rgba(229, 57, 53, 0.4);
+}
+.leaflet-popup-content-wrapper {
+    background: #1f1f1f;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #e53935;
+}
+.leaflet-popup-tip {
+    background: #1f1f1f;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 25px;
+    }
+    .info-card {
+        flex: 1 1 100%;
+    }
 }
